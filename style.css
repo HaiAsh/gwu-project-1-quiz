@@ -2,10 +2,8 @@ body {
     margin: 50px 0 0 0;
     font-family: 'Ms Trebuchet', Helvetica, sans-serif;
     background-image: url("https://www.creativefabrica.com/wp-content/uploads/2022/12/23/Purple-Seamless-Honeycomb-Pattern-Graphics-54119939-1.jpg");
-   
   }
-  
-  
+
 body h1 {
    display: flex;
    flex-wrap: wrap;
