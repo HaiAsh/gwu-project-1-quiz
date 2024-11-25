@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="/gwu-project-1-quiz/assets/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Quizzy</title>
 </head>
 <header>
@@ -18,7 +18,26 @@
       </nav>
 </header>
 <body>
-    <h1>Welcome to the Quiz!</h1>
+    <h1>Welcome to Quizzy</h1>
+
+    <p style = "font-size: xx-large; text-align: center;">Are you ready to take a quiz? Click the button below to get started!</p>
+    <div id="myQuiz" class="quiz">
+        <div class="quiz-content">
+            <span class="close">&times;</span>
+           
+           
+            <button id="myBtn">Start Quiz</button> 
+            <style>
+                .quiz {
+                display: flex; 
+                justify-content: center;
+                align-items: flex-start;
+                margin-top: 20px;
+
+                }
+            </style>
+        </div>
+    <script src="./script.js"></script>
 </body>
 <footer>
     <p>&copy; 2024 Group B</p>
