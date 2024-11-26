@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        #container {
+            width: 70%;
+            margin: auto;
+            background-color: rgb(204, 211, 211);
+            height: 300px;
+            padding: 50px;
+            border: 2px solid pink;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #010b02;
+        }
+
+        #quizContent {
+            display: none;
+            margin: auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="startButton" class="btn" onclick="startQuiz()">Start Quiz</button>
+        
+        <div id="quizContent">
+            <div id="questionContainer"></div>
+        </div>
+    </div>
+
+    <script src="quizapp.js"></script> <!-- External JavaScript File -->
+</body>
+</html>
