@@ -116,7 +116,7 @@ function loadQuestion() {
                     </div>
                 `).join('')}
             </div>
-            <button class="btn" onclick="submitAnswer()">Submit</button>
+            <button class="btn" id="hidden-button" onclick="submitAnswer()">Next</button>
         `;
         document.getElementById('quizContent').innerHTML = quizContent;
     } else {
@@ -149,7 +149,7 @@ function submitAnswer() {
 function showResult() {
     const resultContent = `
         <h2>Your Score: ${score} / ${quizData.length}</h2>
-        <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+        <button class="btn" id="restart-button" onclick="restartQuiz()">Restart Quiz</button>
     `;
     document.getElementById('quizContent').innerHTML = resultContent;
 }
