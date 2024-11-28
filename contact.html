@@ -5,100 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Us - Quiz App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color:aquamarine ;
-        }
-div.container section, section form
-{
-    background-color: rgb(130, 132, 137);
-
-}
-        h2 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            padding: 12px;
-            font-size: 16px;
-            width: auto;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            margin-top: 40px;
-        }
-
-        .contact-info {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
     <header>
         <h1>Contact Us - Quiz App</h1>
+        <nav>
+            <ul>
+                <li id="one"><a href ="index.html">Home</a></li>
+                <li class="kk"><a href="about.html">About us</a></li>
+                <li class="kk"><a href="contact.html">Contact</a></li>
+                
+             </ul>
+      </nav>
     </header>
 
     <div class="container">
@@ -114,7 +34,7 @@ div.container section, section form
             <p><strong>Address:</strong> 123 Quiz Avenue, Quizzy City, 54321</p>
         </section>
 
-        <section>
+        <section class="contact-form">
             <h2>Contact Form</h2>
             <form action="submit_contact_form.php" method="POST">
                 <label for="name">Your Name</label>
