@@ -22,12 +22,7 @@ header {
     
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: auto;
-    padding: 10px;
-}
+
 
 header nav {
     margin-top: 0px;
@@ -64,7 +59,7 @@ header nav ul li a:hover {
 body h1 {
     text-align: center;
     margin: 50px auto;
-    font-size: 5rem;
+    font-size: 5 rem;
     font-weight: bold;
     color: #333;
     border: 1px solid white;
@@ -72,8 +67,10 @@ body h1 {
     background-color: #b1e3e3;
     padding: 10px;
     display: flex;
-    text-align: center;
     width: 50%;
+    padding-left:20px;
+    justify-content: center;
+
 }
 
 /* Footer Styling */
@@ -286,4 +283,8 @@ div h3 {
     margin: 200px auto;
     display: flex;
     font-size: 1.5rem;
+}
+p#par1
+{
+    justify-content: left;
 }

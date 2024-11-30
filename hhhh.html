@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form</title>
+</head>
+<body>
+    <h1>Quiz Form</h1>
+
+    <!-- Form for adding a new quiz question -->
+    <form id="quizForm">
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question" required><br><br>
+
+        <label for="option1">Option 1:</label>
+        <input type="text" id="option1" name="option1" required><br><br>
+
+        <label for="option2">Option 2:</label>
+        <input type="text" id="option2" name="option2" required><br><br>
+
+        <label for="option3">Option 3:</label>
+        <input type="text" id="option3" name="option3" required><br><br>
+
+        <label for="option4">Option 4:</label>
+        <input type="text" id="option4" name="option4" required><br><br>
+
+        <label for="answer">Correct Answer:</label>
+        <input type="text" id="answer" name="answer" required><br><br>
+
+        <button type="submit">Submit Question</button>
+    </form>
+
+    <script>
+        // Retrieve data from localStorage, if available
+        let quizData = JSON.parse(localStorage.getItem('qdata')) || [];
+
+        // Get the form element
+        const quizForm = document.getElementById('quizForm');
+
+        // Event listener for form submission
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting normally
+
+            // Get form values
+            const question = document.getElementById('question').value;
+            const option1 = document.getElementById('option1').value;
+            const option2 = document.getElementById('option2').value;
+            const option3 = document.getElementById('option3').value;
+            const option4 = document.getElementById('option4').value;
+            const answer = document.getElementById('answer').value;
+
+            // Create an object for the new question
+            const newQuestion = {
+                question: question,
+                options: [option1, option2, option3, option4],
+                answer: answer
+            };
+
+            // Push the new question to the quizData array
+            quizData.push(newQuestion);
+
+            // Save updated quizData to localStorage
+            localStorage.setItem('qdata', JSON.stringify(quizData));
+
+            // Optionally, clear the form inputs
+            quizForm.reset();
+        });
+    </script>
+</body>
+</html>
