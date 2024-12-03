@@ -1,5 +1,5 @@
-// Initial 14 questions
-const initialQuizData = [
+// Quiz data
+const quizData = [
     {
         "question": "What is the correct syntax to print a message to the console in JavaScript?",
         "options": ["console.print('Hello World')", "console.log('Hello World')", "log.console('Hello World')", "echo('Hello World')"],
@@ -72,15 +72,12 @@ const initialQuizData = [
     }
 ];
 
-// Retrieve the quiz data from localStorage or use the initial questions if not already stored
-let quizData = JSON.parse(localStorage.getItem("quizData")) || initialQuizData;
-//localStorage.clear();
-//localStorage.removeItem('quizData');
 let currentQuestionIndex = 0;
 let score = 0;
 
 // Wait for the DOM to be fully loaded before running the quiz
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if there's a saved state for the quiz in localStorage
     const savedState = localStorage.getItem('quizState');
     if (savedState) {
         const state = JSON.parse(savedState);
@@ -163,33 +160,3 @@ function restartQuiz() {
     startQuiz();
 }
 
-// Handle form submission to add quiz data
-document.getElementById('quizDataForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const question = document.getElementById('question').value;
-    const options = [
-        document.getElementById('option1').value,
-        document.getElementById('option2').value,
-        document.getElementById('option3').value,
-        document.getElementById('option4').value
-    ];
-    const answer = document.getElementById('answer').value;
-
-    const newQuestion = {
-        question: question,
-        options: options,
-        answer: answer
-    };
-
-    quizData.push(newQuestion);  // Add the new question to quizData
-
-    // Save the updated quiz data to localStorage
-    localStorage.setItem('quizData', JSON.stringify(quizData));
-
-    // Clear form inputs (optional)
-    document.getElementById('quizDataForm').reset();
-
-    alert('Question added successfully!');
-  
-});
