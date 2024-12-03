@@ -329,3 +329,81 @@ div h3 {
 #start-button:hover {
     background-color: #4F56DB;
 }
+
+@media screen and (max-width: 768px) {
+    header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+    }
+
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        padding: 10px 20px;
+    }
+
+    #welcome h2 {
+        width: 80%;
+    }
+
+    #welcome p {
+        width: 80%;
+    }
+
+    .contact-info {
+        width: 80%;
+    }
+
+    #quizDataForm input {
+        width: 80%;
+    }
+
+    #quizDataForm textarea {
+        width: 80%;
+    }
+
+    #quizDataForm button[type="submit"] {
+        width: 40%;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    #about {
+        width: 100%;
+    }
+
+    div img {
+        width: 100px;
+    }
+
+    .team-member p {
+        width: 80%;
+    }
+
+    #container {
+        width: 100%;
+    }
+
+    #start-button {
+        padding: 10px;
+        margin: 200px auto;
+        display: flex;
+        font-size: 1.5rem;
+        background-color: #151523;
+        color: white;
+        border: black 1px solid;
+    }
+    
+}
