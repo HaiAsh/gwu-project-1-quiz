@@ -97,7 +97,7 @@ footer p {
 #welcome p {
     text-align: left;
     margin: 50px auto;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #333;
     padding: 0px 0px 40px 0px;
     width: 72%;
@@ -116,6 +116,7 @@ footer p {
     display: flex;
     justify-content: center;
     box-shadow: #151523 0px 0px 10px 0px;
+    width: 40%
 }
 
 #quiz-button:hover {
@@ -176,9 +177,7 @@ footer p {
 
 #quizDataForm {
     margin: 20px auto;
-    width: 100%;
-    background-color: rgb(72, 156, 199);
-    color: #000000;
+    color: #fff;
     padding: 20px;
     font-size: larger;
     font-weight: bolder;
@@ -299,7 +298,27 @@ div h3 {
     position: relative;
 }
 
+.answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.answers div {
+    display: inline;
+}
+
+.answers div input {
+    margin: 10px;
+    display: inline;
+}
+
+.answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #next-button, #close-button, #restart-button {
+    display: inline;
     padding: 10px 20px;
     background-color: #151523;
     color: white;
@@ -333,81 +352,122 @@ div h3 {
     background-color: #4F56DB;
 }
 
-@media screen and (max-width: 768px) {
-    header h2 {
-        font-size: 1.5rem;
-        text-align: center;
-        display: block;
+
+/* Laptop View (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 20px 0;
     }
 
-
-    header nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    h2 {
+        font-size: 28px;
     }
 
-    header nav ul li {
-        width: 100%;
+    nav ul li {
+        display: inline-block;
+        margin: 0 30px;
     }
 
-    header nav ul li a {
+    nav ul li a {
+        font-size: 20px;
+    }
+}
+
+    #welcome p {
+        font-size: 1em;
+        padding: 0 15px;
+    }
+
+    #quiz-button {
+        font-size: 0.9em;
         padding: 10px 20px;
     }
 
-    #welcome h2 {
-        width: 80%;
+
+/* Tablet View (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    nav ul li {
+        flex-direction: column;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+
+    #welcome {
+        padding: 30px 15px;
     }
 
     #welcome p {
+        font-size: 0.9em;
         width: 200%;
         text-align: left;
     }
 
-    .contact-info {
+    #quiz-button {
+        font-size: 0.9em;
         width: 80%;
     }
 
-    #quizDataForm input {
-        width: 80%;
+
+/* Phone View (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 20px 0;
     }
 
-    #quizDataForm textarea {
-        width: 80%;
+    h2 {
+        font-size: 18px;
     }
 
-    #quizDataForm button[type="submit"] {
-        width: 40%;
+    nav ul {
+        padding: 0;
     }
 
-    .container {
-        width: 100%;
+    nav ul li {
+        flex-direction: column;
+        display: block;
+        text-align: center;
+        margin: 5px 0;
     }
 
-    #about {
-        width: 100%;
+    nav ul li a {
+        font-size: 14px;
     }
 
-    div img {
-        width: 100px;
+
+    #welcome {
+        padding: 20px 10px;
     }
 
-    .team-member p {
-        width: 80%;
+    #welcome h2 {
+        font-size: 1.5em;
     }
 
-    #container {
-        width: 100%;
+    #welcome p {
+        font-size: 0.8em;
     }
 
-    #start-button {
-        padding: 10px;
-        margin: 200px auto;
-        display: flex;
-        font-size: 1.5rem;
-        background-color: #151523;
-        color: white;
-        border: black 1px solid;
+    #quiz-button {
+        font-size: 0.8em;
+        padding: 10px 15px;
     }
-    
+
+    footer {
+        font-size: 0.8em;
+    }
 }
