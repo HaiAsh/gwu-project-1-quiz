@@ -247,5 +247,3 @@ function submitAnswer() {
     currentQuestionIndex++;
     loadQuestion();
 }
-
-

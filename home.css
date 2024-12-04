@@ -414,6 +414,8 @@ div h3 {
 
     #welcome p {
         font-size: 0.9em;
+        width: 200%;
+        text-align: left;
     }
 
     #quiz-button {
