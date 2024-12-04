@@ -13,7 +13,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #4F83DB;
+    background-color: rgb(72, 156, 199);
     padding: 20px 0;
     text-align: center;
     margin: auto;
@@ -79,7 +79,7 @@ footer p {
 }
 
 #welcome {
-    background-color: #4F83DB;
+    background-color: rgb(72, 156, 199);
     margin: 20px auto;
 }
 
@@ -95,12 +95,12 @@ footer p {
 }
 
 #welcome p {
-    text-align: center;
+    text-align: left;
     margin: 50px auto;
     font-size: 1.2rem;
     color: #333;
-    padding: 0px 0px 20px 0px;
-    width: 40%;
+    padding: 0px 0px 40px 0px;
+    width: 72%;
     border-radius: 5px;
 }
 
@@ -155,7 +155,7 @@ footer p {
 .contact-info h2 {
     margin: 0;
     padding: 10px;
-    background-color: #4F83DB;
+    background-color:  rgb(72, 156, 199);
     color: #A5D8D8;
 }
 
@@ -177,9 +177,11 @@ footer p {
 #quizDataForm {
     margin: 20px auto;
     width: 100%;
-    background-color:#333;
-    color: #fff;
+    background-color: rgb(72, 156, 199);
+    color: #000000;
     padding: 20px;
+    font-size: larger;
+    font-weight: bolder;
 
 }
 
@@ -201,7 +203,7 @@ footer p {
 }
 
 #quizDataForm button[type="submit"] {
-    background-color: #151523;
+    background-color: black;
     font-size: large;
     color: white;
     border: 1px solid white;
@@ -210,6 +212,7 @@ footer p {
     transition: background-color 0.3s ease;
     margin: 10px 5px;
     display: flex;
+    font-style: italic;
 }
 
 #quizDataForm button[type="submit"]:hover {
@@ -247,7 +250,7 @@ footer p {
     text-align: left;
     padding: 20px;
     margin: 20px auto;
-    background-color: #4F83DB;
+    background-color: rgb(72, 156, 199);
     color: #333;
     width: 72%;
     border-radius: 5px;
@@ -283,7 +286,7 @@ div h3 {
     text-align: left;
     margin: 10px auto;
     padding: 10px;
-    background-color: #4F83DB;
+    background-color: rgb(72, 156, 199);
     border-radius: 5px;
     width: 50%
 }
@@ -357,7 +360,8 @@ div h3 {
     }
 
     #welcome p {
-        width: 80%;
+        width: 200%;
+        text-align: left;
     }
 
     .contact-info {
