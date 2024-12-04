@@ -1,5 +1,5 @@
-// Quiz data
-const quizData = [
+// Initial 14 questions
+const initialQuizData = [
     {
         "question": "What is the correct syntax to print a message to the console in JavaScript?",
         "options": ["console.print('Hello World')", "console.log('Hello World')", "log.console('Hello World')", "echo('Hello World')"],
@@ -72,12 +72,15 @@ const quizData = [
     }
 ];
 
+// Retrieve the quiz data from localStorage or use the initial questions if not already stored
+let quizData = JSON.parse(localStorage.getItem("quizData")) || initialQuizData;
+//localStorage.clear();
+//localStorage.removeItem('quizData');
 let currentQuestionIndex = 0;
 let score = 0;
 
 // Wait for the DOM to be fully loaded before running the quiz
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if there's a saved state for the quiz in localStorage
     const savedState = localStorage.getItem('quizState');
     if (savedState) {
         const state = JSON.parse(savedState);
@@ -117,6 +120,7 @@ function loadQuestion() {
                 `).join('')}
             </div>
             <button class="btn" id="hidden-button" onclick="submitAnswer()">Next</button>
+            <button type="button" id="close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         `;
         document.getElementById('quizContent').innerHTML = quizContent;
     } else {
@@ -159,4 +163,89 @@ function restartQuiz() {
     localStorage.removeItem('quizState');  // Remove saved state from localStorage
     startQuiz();
 }
+
+// Handle form submission to add quiz data
+document.getElementById('quizDataForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const question = document.getElementById('question').value;
+    const options = [
+        document.getElementById('option1').value,
+        document.getElementById('option2').value,
+        document.getElementById('option3').value,
+        document.getElementById('option4').value
+    ];
+    const answer = document.getElementById('answer').value;
+
+    const newQuestion = {
+        question: question,
+        options: options,
+        answer: answer
+    };
+
+    quizData.push(newQuestion);  // Add the new question to quizData
+
+    // Save the updated quiz data to localStorage
+    localStorage.setItem('quizData', JSON.stringify(quizData));
+
+    // Clear form inputs (optional)
+    document.getElementById('quizDataForm').reset();
+
+    alert('Question added successfully!');
+  
+});
+//
+// Load a question
+function loadQuestion() {
+    if (currentQuestionIndex < quizData.length) {
+        const questionData = quizData[currentQuestionIndex];
+        const quizContent = `
+            <div class="question">${questionData.question}</div>
+            <div class="answers">
+                ${questionData.options.map((option, index) => `
+                    <div class="answer">
+                        <input type="radio" name="answer" value="${option}" id="option${index}">
+                        <label for="option${index}">${option}</label>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="answer-buttons">
+                <button type="button" id="close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn" id="next-button" onclick="submitAnswer()">Next</button>
+            </div>
+            
+        `;
+        document.getElementById('quizContent').innerHTML = quizContent;
+
+        // Make sure the Next button is visible when the question loads
+        document.getElementById('next-button').style.display = 'block';
+    } else {
+        showResult();
+    }
+}
+
+// Submit the answer and move to the next question
+function submitAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+        const selectedOption = selectedAnswer.value;
+        if (selectedOption === quizData[currentQuestionIndex].answer) {
+            score++;
+        }
+    }
+
+    // Save the current progress to localStorage
+    const quizState = {
+        currentQuestionIndex: currentQuestionIndex + 1,
+        score: score
+    };
+    localStorage.setItem('quizState', JSON.stringify(quizState));
+
+    // Hide the "Next" button after submission to prevent clicking before loading the next question
+    document.getElementById('next-button').style.display = 'none';
+
+    currentQuestionIndex++;
+    loadQuestion();
+}
+
 
